@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let input = document.querySelector("input")
+        let button = document.querySelector(".button1")
+        let para = document.querySelector("p")
+        let button2 = document.querySelector(".button2")
+        let array = []
+        button.onclick = () => {
+            array.push(input.value)
+            console.log(array)
+            input.value = " "
+            input.focus()
+        };
+
+        button2.onclick = () => {
+            let i = 0;
+            let x = setInterval(() => {
+                if (i === array.length - 1) {
+                    clearInterval(x);
+                    para.innerHTML += array[i++];
+
+                }
+                else para.innerHTML = para.innerHTML + array[i++] + ",";
+
+            }, 1000)
+        }
+    </script>
+
+</body>
+
+</html>
